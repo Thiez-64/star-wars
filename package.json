@@ -1,0 +1,12 @@
+{
+  "name": "star-wars",
+  "source": "src/index.html",
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "2.9.3",
+    "parcel": "latest"
+  }
+}

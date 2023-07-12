@@ -1,0 +1,112 @@
+@use "/src/colors" as colors;
+@font-face {
+  font-family: "GT Ultra";
+  src: url("fonts/GT-Ultra-Standard-Bold-Trial.woff2") format("woff2");
+  font-style: bold;
+}
+
+body {
+  margin: 0;
+  background-color: colors.$dark-navi;
+  height: 100vh;
+}
+
+.wrapper {
+  width: 1067px;
+  padding-block: 120px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 95px;
+
+  .content {
+    display: flex;
+    flex-direction: row;
+    color: colors.$yellow;
+    gap: 150px;
+
+    .left {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 200px;
+
+      .description {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        .logo {
+          width: 80px;
+          height: 80px;
+          margin-bottom: 24px;
+        }
+
+        .title {
+          font-family: "Montserrat", sans-serif;
+          font-weight: 700;
+          font-size: 40px;
+          line-height: 48.76px;
+          margin-bottom: 8px;
+        }
+
+        .text {
+          font-family: "Montserrat", sans-serif;
+          font-weight: 300;
+          font-size: 20px;
+          line-height: 30px;
+          width: 32ch;
+        }
+      }
+    }
+
+    .right {
+      width: 430px;
+      height: 616px;
+      overflow: hidden;
+
+      .image {
+        width: 530px;
+        height: 822.59px;
+        translate: -10% -1%;
+      }
+    }
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 95px;
+
+    .arrows {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 40px;
+      .arrow {
+        color: colors.$yellow;
+      }
+    }
+
+    .time {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      .dot {
+        width: 32px;
+        height: 32px;
+        border-radius: 100%;
+        background-color: colors.$yellow;
+        border: 4px solid colors.$yellow-36;
+      }
+
+      .line {
+        width: 160px;
+        height: 0px;
+        border: 1px solid colors.$yellow-36;
+      }
+    }
+  }
+}
