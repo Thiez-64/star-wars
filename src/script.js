@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   var clickCount = 0;
   var dotIndex = 1;
+  var lineIndex = 0;
 
   var logos = document.getElementById("logos");
   var logosWidth = 80;
@@ -27,6 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var dateDistance = clickCount * datesWidth;
 
     var dot = document.getElementById("dot" + (dotIndex + 1));
+    var line = document.getElementById("line" + (lineIndex + 1));
 
     logos.style.transform = `translateX(-${logoDistance}px)`;
     posters.style.transform = `translateX(-${posterDistance}px)`;
@@ -35,8 +37,10 @@ document.addEventListener("DOMContentLoaded", function () {
     dates.style.transform = `translateX(-${dateDistance}px)`;
 
     dot.style.backgroundColor = `#fff38a`;
+    line.style.backgroundColor = `#fff38a`;
 
     dotIndex = (dotIndex + 1) % 6 === 0 ? 6 : (dotIndex + 1) % 6;
+    lineIndex = (lineIndex + 1) % 6 === 0 ? 6 : (lineIndex + 1) % 6;
   });
 
   document.getElementById("arrow-left").addEventListener("click", function () {
@@ -49,6 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var dateDistance = clickCount * datesWidth;
 
     dot = document.getElementById("dot" + dotIndex);
+    line = document.getElementById("line" + lineIndex);
 
     logos.style.transform = `translateX(-${logoDistance}px)`;
     posters.style.transform = `translateX(-${posterDistance}px)`;
@@ -57,7 +62,9 @@ document.addEventListener("DOMContentLoaded", function () {
     dates.style.transform = `translateX(-${dateDistance}px)`;
 
     dot.style.backgroundColor = `#827b68`;
+    line.style.backgroundColor = `#827b68`;
 
     dotIndex = dotIndex - 1;
+    lineIndex = lineIndex - 1;
   });
 });

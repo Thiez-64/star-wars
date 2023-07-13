@@ -223,20 +223,9 @@ body {
       }
 
       .line {
-        border: 1px solid colors.$yellow-36;
+        background-color: colors.$yellow-36;
+        height: 1px;
         width: 125px;
-
-        &::after {
-          border: 1px solid colors.$yellow-36;
-          width: 125px;
-
-          transition: width 0.4ms ease;
-        }
-      }
-
-      .line-selected {
-        border: 1px solid;
-        animation: color-change 2s linear infinite;
       }
 
       #dot1 {
