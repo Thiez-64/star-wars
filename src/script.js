@@ -18,6 +18,8 @@ document.addEventListener("DOMContentLoaded", function () {
   var posters = document.getElementById("posters");
   var postersWidth = 430;
 
+  var bar = document.getElementById("bar");
+
   document.getElementById("arrow-right").addEventListener("click", function () {
     clickCount++;
 
@@ -28,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var dateDistance = clickCount * datesWidth;
 
     var dot = document.getElementById("dot" + (dotIndex + 1));
-    var line = document.getElementById("line" + (lineIndex + 1));
+    var line = document.getElementById("line_progress" + (lineIndex + 1));
 
     logos.style.transform = `translateX(-${logoDistance}px)`;
     posters.style.transform = `translateX(-${posterDistance}px)`;
@@ -37,10 +39,13 @@ document.addEventListener("DOMContentLoaded", function () {
     dates.style.transform = `translateX(-${dateDistance}px)`;
 
     dot.style.backgroundColor = `#fff38a`;
-    line.style.backgroundColor = `#fff38a`;
+
+    line.classList.add("line_progress_selected");
 
     dotIndex = (dotIndex + 1) % 6 === 0 ? 6 : (dotIndex + 1) % 6;
     lineIndex = (lineIndex + 1) % 6 === 0 ? 6 : (lineIndex + 1) % 6;
+
+    bar.classList.add("bar_selected");
   });
 
   document.getElementById("arrow-left").addEventListener("click", function () {
@@ -53,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var dateDistance = clickCount * datesWidth;
 
     dot = document.getElementById("dot" + dotIndex);
-    line = document.getElementById("line" + lineIndex);
+    line = document.getElementById("line_progress" + lineIndex);
 
     logos.style.transform = `translateX(-${logoDistance}px)`;
     posters.style.transform = `translateX(-${posterDistance}px)`;
@@ -62,7 +67,9 @@ document.addEventListener("DOMContentLoaded", function () {
     dates.style.transform = `translateX(-${dateDistance}px)`;
 
     dot.style.backgroundColor = `#827b68`;
-    line.style.backgroundColor = `#827b68`;
+    // line.style.backgroundColor = `#827b68`;
+
+    line.classList.remove("line_progress_selected");
 
     dotIndex = dotIndex - 1;
     lineIndex = lineIndex - 1;

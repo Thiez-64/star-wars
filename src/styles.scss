@@ -224,8 +224,23 @@ body {
 
       .line {
         background-color: colors.$yellow-36;
-        height: 1px;
+        height: 2px;
         width: 125px;
+        position: relative;
+
+        .line_progress {
+          position: absolute;
+          width: 100%;
+          height: 2px;
+          top: 0;
+          background-color: colors.$yellow;
+          transform: scaleX(0);
+          transform-origin: left;
+          transition: 300ms ease-in-out transform;
+        }
+        .line_progress_selected {
+          transform: scaleX(100%);
+        }
       }
 
       #dot1 {
